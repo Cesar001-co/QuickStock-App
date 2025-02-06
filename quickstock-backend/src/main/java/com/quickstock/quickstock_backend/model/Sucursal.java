@@ -5,11 +5,12 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "sucursales")
 @Data
-public class Sucursales {
+public class Sucursal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_sucursal")
@@ -23,17 +24,17 @@ public class Sucursales {
 
     @OneToMany(mappedBy = "sucursal")
     @JsonManagedReference
-    private List<TipoProducto> tiposProducto;
+    private List<TipoProducto> tiposProducto = new ArrayList<>();
 
     @OneToMany(mappedBy = "sucursal")
     @JsonManagedReference
-    private List<Producto> productos;
+    private List<Producto> productos = new ArrayList<>();
 
     @OneToMany(mappedBy = "sucursal")
     @JsonManagedReference
-    private List<Venta> ventas;
+    private List<Venta> ventas = new ArrayList<>();
 
     @OneToMany(mappedBy = "sucursal")
     @JsonManagedReference
-    private List<UsuarioSucursal> usuarios;
+    private List<UsuarioSucursal> usuarios = new ArrayList<>();
 }

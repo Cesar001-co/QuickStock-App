@@ -11,7 +11,7 @@ import java.io.Serializable;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class UsuarioSucursalId implements Serializable {
+public class UsuarioSucursalPK implements Serializable {
     private Long idUsuario;
     private Long idSucursal;
 }
